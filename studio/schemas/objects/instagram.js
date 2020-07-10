@@ -1,3 +1,11 @@
+import React from 'react'
+import InstagramEmbed from 'react-instagram-embed'
+
+const Preview = ({ value }) => {
+  const { id } = value
+  return <InstagramEmbed url={`https://www.instagram.com/p/${id}/`} />
+}
+
 export default {
   name: 'instagram',
   type: 'object',
@@ -9,4 +17,10 @@ export default {
       title: 'Instagram post ID',
     },
   ],
+  preview: {
+    select: {
+      id: 'id',
+    },
+    component: Preview,
+  },
 }
